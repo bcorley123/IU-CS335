@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+#define Imm5(x) (((x) >> 6) & 0x1f)
+#define Imm8(x) (x & 0xff)
+#define Rdn(x)  (((x) >> 8) & 7)
+
+void data_proc(int);
+//void other(int);
+void ascmi(int);
+  
+
+
+  
+char *regnames[] = {"r0", "r1", "r2", "r3", "r4", "r5", "r6", "r7"};
+
+void main(){
+  
+  int x = 0x0011; // movs r1, r2
+  int y = 0x214B; //  movs r1, #75
+  int z = 0x4011;   //ands r1, r2
+  int a =0x2A79;//0x2A79;
+  printf("%d\n", Rdn(a));
+  if((a>>14)==2){
+    //data_proc(a);
+    //printf("aa");
+  }
+  else if((a>>13)==1){
+    //printf("%s",regnames[0]) ;
+    ascmi(a);
+  }
+  else if ((a>>13)==0){
+    //others(a);
+  }
+  else{
+    printf(".hword 0x%x", a);
+  }
+  
+  
+}
+
+void ascmi(int a){
+  char *mnemonics[]={"movs","cmp","adds","subs"};
+  int i = Rdn(a);
+  int j  = ((a>>11)& 0x03);
+  printf("%x  %s %s, #%d\n", a, mnemonics[j],regnames[i], Imm8(a));
+}
+
+/*
+void data_proc(int a){
+  char *mnemonics[]={"movs","cmp","adds","subs", "movs","cmp","adds","subs" /
+		     "movs","cmp","adds","subs"};
+*/
+

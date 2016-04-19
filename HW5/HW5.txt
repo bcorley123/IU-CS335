@@ -1,0 +1,63 @@
+﻿Blake Corley     			working w/ absilver
+
+
+1.
+ a. There exists 16 register, but we only have access to 13. (R0-R12)
+b.  8 registers can be addressed with 16-bit instructions ? (R0-R7)
+
+2.
+a. Instructions can either be 16- bit or 32-bit
+b. Two-byte alignment restriction.
+
+3. The APSR contains the current state of the condition flags from previous instruction executions. 
+N = Negative flag => Set to 1 when the result of the operation was negative, cleared to 0 otherwise.
+Z = Zero flag => Set to 1 when the result of the operation was zero, cleared to 0 otherwise.
+C = Carry or borrow flag => Set to 1 when the operation resulted in a carry, cleared to 0 otherwise.
+V = Overflow flag => Set to 1 when the operation caused overflow, cleared to 0 otherwise
+Q = Saturation flag
+
+
+4.
+r0 = 2;
+r1 = 9;
+r2 = r1 + r0;
+r4 = 3;
+r5 = r2 – r4
+
+
+5.					r0		r1		r2
+					25		0		0 					
+
+ ldr r1,[r0]				25 		25		0
+ ldr r2, [r0,#4]			25		25		26
+ add r2, r1, r2				25		25		51
+ ldr r1, [r0, #4]!			25		25		51
+ add r2, r2, r1				26 		26		77
+ ldr r1, [r0],#4			27		26		77
+ add r2, r2, r1				27		26		103
+ str r2, [r0]				27		26		103
+<<<<<<< HEAD
+
+=======
+	
+>>>>>>> 0ed4fd3904e7623723e95fe8ea059f412ac9622f
+  0x40001000 25
+ 0x40001001 00
+ 0x40001002 00
+ 0x40001003 00
+ 0x40001004 27
+ 0x40001005 00
+ 0x40001006 00
+ 0x40001007 00
+ 0x40001008 27
+ 0x40001009 00
+ 0x4000100a 00
+ 0x4000100b 00
+ 0x4000100c 28
+ 0x4000100d 00
+ 0x4000100e 00
+ 0x4000100f 00
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0ed4fd3904e7623723e95fe8ea059f412ac9622f

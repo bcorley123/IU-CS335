@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+
+
+
+
+
+/*
+
+void asmi(int a){
+  
+  
+  
+}*/
+
+void main(){
+  
+  int x = 0x0011; // movs r1, r2
+  int y = 0x214B; //  subs r2, r3, r4
+  int z = 0x4011;   //ands r1, r2
+  int a = y;
+
+  if((a>>14)=2){
+    //data_proc(a);
+    printf("aa");
+  }
+  else if((a>>13)==1){
+    // ascmi(a);
+  }
+  else{
+    //others(a);
+
+  }
+
+  
+  
+}

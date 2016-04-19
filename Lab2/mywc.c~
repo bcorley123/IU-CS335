@@ -1,0 +1,50 @@
+/**********************************************************
+* Interface.c
+*
+* These definitions set up the I/O interface for the PowerBox.
+*
+* Author:
+---
+* Date Created:
+---
+* Last Modified by:
+---
+* Date Last Modified:
+---
+* Assignment:
+---
+* Part of:
+---
+*/
+
+#include <stdio.h>
+
+void main(void){
+  
+  int c;
+  int lines = 0;
+  int words = 0;
+  int chars = 0;
+  
+
+  while ((c = getchar()) != EOF){
+
+    chars++;
+    
+    if (c == ' '){
+      words++;
+    }
+    
+    if (c == '\n'  ){
+      lines++;
+      words++;
+    }
+  }
+
+    printf("%d  %d  %d \n", lines, words, chars); 
+    
+ 
+
+
+
+}

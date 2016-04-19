@@ -1,0 +1,9 @@
+Blake Corley bacorley
+
+I set up a repository and wrote a C program and pushed it to github.
+
+It took me a lttle while to get the program working because not knowing emacs.
+
+Getting the repository key was a struggle but I searched google and found the answer.
+
+I learned to write a program in C. It's similar to Java so learning it wont be a huge problem.

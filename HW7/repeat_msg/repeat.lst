@@ -1,0 +1,37 @@
+
+repeat.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <repeat>:
+   0:	b500      	push	{lr}
+   2:	6802      	ldr	r2, [r0, #0]
+   4:	b909      	cbnz	r1, a <loop>
+   6:	f000 f812 	bl	2e <exit>
+
+0000000a <loop>:
+   a:	4291      	cmp	r1, r2
+   c:	bf38      	it	cc
+   e:	f000 f80e 	blcc	2e <exit>
+  12:	2b00      	cmp	r3, #0
+  14:	bf18      	it	ne
+  16:	e000      	bne.n	1a <putone>
+  18:	e004      	b.n	24 <putzero>
+
+0000001a <putone>:
+  1a:	3201      	adds	r2, #1
+  1c:	4804      	ldr	r0, [pc, #16]	; (30 <exit+0x2>)
+  1e:	f7ff fffe 	bl	0 <puts>
+  22:	e7f2      	b.n	a <loop>
+
+00000024 <putzero>:
+  24:	3201      	adds	r2, #1
+  26:	4803      	ldr	r0, [pc, #12]	; (34 <exit+0x6>)
+  28:	f7ff fffe 	bl	0 <puts>
+  2c:	e7ed      	b.n	a <loop>
+
+0000002e <exit>:
+  2e:	bd00      	pop	{pc}
+  30:	00000005 	.word	0x00000005
+  34:	00000000 	.word	0x00000000

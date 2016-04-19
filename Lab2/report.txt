@@ -1,0 +1,9 @@
+Blake Corley bacorley
+
+
+Results: I created two functions(mywc and myprintf). Everything works according to the test cases. There might be a minor flaw in mywc in that mulitple spaces would count as multiple words, but we were told in lab just as long as the test case works we are fine so I didn't bother changing it. 
+
+
+Difficulties: mywc was straightfoward. printstring was also wasy. printint wasn't too bad just modding off numbers to find the the last digit and the reverse printing the result. printhex was tricky. I modded off the int to find the need size for the hex and then divided by the base value to find the first char. I was able to overcome all difficulties after spending around 10 hours on this assignment(still learing C) 
+
+I am starting to get more familiar with C. Hex values make more sense now. I still don't really know fully how pointers work though. I know how putchar work and how you do it with ascii numbers. I sort of understand how getchar() works.

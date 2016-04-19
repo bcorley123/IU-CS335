@@ -1,0 +1,21 @@
+Blake:	Car collision detection 
+	Draw HP 
+	Draw Map 
+	fill Map buffer 
+	draw score and update when shot 
+	game loop control when collision of car occurs 
+	draw NPC cars 
+	draw start screen 
+	draw game over screen 
+	draw people 
+	move people 
+	Systick	 
+
+
+Most of what I did was front end graphics work such as drawing the people, NPC cars, the map, the HP, and the Score. I also did a little work with the game physics such as car on car collision and moving the people. Both my partner and I spent about an equal amount of time working on the game.
+
+
+So a lot of the technical challenges that I encountered came from reading images from the SD. We also found that you really had to manage your resources wisely. We were refreshing the whole screen every iteration of the game loop, but we found that to be far too taxing on the processor. I was able to overcome most of the bugs I ran into. Fortunately, Ian, was able to debug the problems I couldn't fix.
+
+
+If I had to do things differently I would get the persistent high score working. Also, road lines would have made everything more visually appealing, so adding that would have been cool. Almost everything that we set out to do was finished. There were a couple of minor compromises that we needed to make due to processor power, but ultimately it turn out exactly as we wanted.

@@ -1,0 +1,7 @@
+bacorley Blake Corley / Jennie Lipson 
+
+We wrote a program the prints memory dump. All of the it worked. We also made a make file.
+
+There weren't many difficulties. We just needed to look up how the print statements work. We used switch to figure out when to print what.
+
+We learned a little about how data is stored in memory. We also learned how to move down an array using pointers.

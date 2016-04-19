@@ -1,0 +1,73 @@
+//
+// dump.c
+//
+ #include <stdio.h>
+ #include <ctype.h>
+
+/* takes a char c and if it's printable, returns c, *
+ * otherwise returns '?' */
+char get_char(char c) {
+  if (isprint(c))
+    return c;
+  else
+    return '?';
+}
+
+void dump_memory(void *p, int len)
+{
+  /* some variables to store the data in the array of polys */
+  int i;
+  char c;
+  unsigned char hex;
+  short s;
+  int j;
+  float f;
+  double d;
+  void *addr;
+
+  printf("address       char hexCh short     integer          float     doubleFloat\n");
+
+  for (i = 0; i < len; i++) {
+    addr = p + i; /* pointer to each new address */
+    switch(i % 8) {
+    case 0: /* divisible by 1, 2, 4, and 8 bytes, so we start reading *
+	     * a char, hexCh, short, integer, float, and double here */
+      c = get_char(*(char *)(addr));
+      hex = *(unsigned char *)(addr);
+      s = *(short *)(addr);
+      j = *(int *)(addr);
+      f = *(float *)(addr);
+      d = *(double *)(addr);
+
+      printf("%8p %3c 0x%02x %+6hd %+11d %+14e %+15e\n", addr, c, hex, s, j, f, d);
+      break;
+
+    case 2: case 6: /* divisible by 1 and 2, so we start reading a char *
+		     * a hexCh, and a short here */
+      c = get_char(*(char *)(addr));
+      hex = *(unsigned char *)(addr);
+      s = *(short *)(addr);
+
+      printf("%8p %3c 0x%02x %+6hd\n", addr, c, hex, s);
+      break;
+
+    case 4: /* divisible by 1, 2, and 4 bytes, so we start reading *
+	     * a char, hexCh, short, integer, and float here */
+      c = get_char(*(char *)(addr));
+      hex = *(unsigned char *)(addr);
+      s = *(short *)(addr);
+      j = *(int *)(addr);
+      f = *(float *)(addr);
+
+      printf("%8p %3c 0x%02x %+6hd %+11d %+14e\n", addr, c, hex, s, j, f);
+      break;
+
+    default: /* not divisible by 2, 4, or 8 bytes, so we only start reading *
+	      * a char and a hexCh here */
+      c = get_char(*(char *)(addr));
+      hex = *(unsigned char *)(addr);
+      printf("%8p %3c 0x%02x\n", addr, c, hex);
+    }
+
+  }
+}

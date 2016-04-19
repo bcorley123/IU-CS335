@@ -1,0 +1,58 @@
+                .syntax unified
+	        .thumb
+	        .text
+		.global repeat
+	        .type repeat, %function
+
+
+
+
+repeat:
+	        push    {lr}     @ save return address on stack
+	        @@@@@ldr     r2,[#0]   @ i
+	        ldr     r3, [r0]   @  msg_id =  r3, num_repetitions = r1, i = r2
+	        cmp     r2, r1
+	        it      lo
+	        bllo    loop
+		bl	exit
+
+
+loop:
+	        cmp     r1, r2
+	        it      lo
+		bllo	exit
+		cmp     r3, #0
+	        it      ne
+	        blne    putone
+	        bl      putzero
+
+
+putone:
+	        adds    r2, #1
+	        ldr     r0, =one
+	        bl      puts
+	        bl      loop
+
+
+putzero:
+	        adds    r2, #1
+	        ldr     r0, =zero
+	        bl      puts
+	        bl      loop
+
+exit:
+	pop	{pc}
+	@bx 	lr
+
+
+
+
+
+	        .data
+zero:
+	        .ascii "zero"
+	        .byte 0
+one:
+	        .ascii "one"
+	        .byte 0
+	
