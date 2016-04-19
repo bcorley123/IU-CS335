@@ -1,0 +1,27 @@
+
+
+
+This lab was a lot more difficult than a lot of the previous labs. We always have trouble getting the inits set up properly. We were having a lot of trouble getting the compass the to give accurate readings. It north is more like north west. The reading we were getting for the nunchuck pitch and roll were weird. The pitch had a range from 25-45 and the roll was about 36-47. But we were able to get everything working in the end.
+
+
+
+
+We learned how the I2C communication link works. It allows for multiple slaves unlike the SPI, which allowed us to interface with a few devices. We built applications that allowed us to cycle between graphical displays of data gathered from sensors.
+
+
+
+
+
+
+
+The I2C uses the addresses of the slave devices in order to target data to the devices, instead of using chip select.
+
+
+We want to divided the values by 1000 to account for device sensitivity. This ultimately gives us more accuracy.  
+
+We cast it from short to a float when we calculate the values for pitch and roll. And the short is unsigned so it never gives a negative value, unlike some other devices that do.
+
+
+Changes in the pitch and roll of the board will affect the heading regardless if you are spinning the board or not. 
+
+We moved the read and get data calls into functions outside of the main. So these read or get data would only be called when it needs that information to use the print to the lcd. Except for the nunchuck read function, which is needed for the button navigations. 

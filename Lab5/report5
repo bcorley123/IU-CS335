@@ -1,0 +1,8 @@
+Blake Corley bacorley  Jennie Lipson jenlipso
+
+We completed all of the required tasks. We were able to get the UART wired up and configured. We gave it the ability to send and receive characters. Also it can use wc.
+
+We had a lot of difficulties in this lab. Most of the parts of the lab we had to ask for some sort of help. There were some parts where we had to take out includes lines but we weren't quite sure why. We had to take out the return in main and again we're not sure why. But with time and (mostly) the good will of others we were able to finish the lab.
+
+I learned how to set up the RX and TX on the board. I learn that serialT runs the main and it will keep continuing until you reset or call serialT again. I'm still not really sure how it all works though. 
+

@@ -1,0 +1,4 @@
+We had difficulties getting the initialization working. But we asked for help and figured out that we were including a file that shouldn;t have been included(stdio). The LED part was pretty easy once we realized how the handler worked.The rest wasn't too bad, a lot of it was just following the manual.
+
+
+We adding a  systick interrupt. We had it send and recieve data and light up leds. We had LED's cycle between slow and fast. Also, we made circular queue functions to handle data coming in and out.

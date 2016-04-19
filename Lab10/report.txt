@@ -1,0 +1,17 @@
+1.) a.To sync up different peripherals.
+     b. To track the date and time...
+c. System clocks vary so using real time will ensure that everything starts with exact timing.
+
+2.) Delay() takes a value in milliseconds. uS() is in microseconds. Using it would allow for exact timing and not relative to the system clock.
+
+3.) DMA frees up processor, because the processor is tied up during the polling process. Also the transfer rate might be too low. Also tight timing is a problem when not using DMA.
+
+4.) The file allocation table uses clusters of memory to store data in a file. These are referred to singly linked lists, and can be fragmented throughout the data region. Corruption in one part of a cluster can corrupt the rest of that same cluster.
+
+5.) The difference comes from the size of the table element bits. 32 can support larger drives. The 32 is able to use space much more efficiently than compared to 16.
+
+
+In the beginning, we had trouble with the initialization. We didn't set the chip select to high at the end of the initialization function, which disallowed the SD card to be able to read. We were a little confused when we found that the bmp_pixel started at (0,160) and not (0,0). That took us a little bit to figure out. The rest of the application was pretty straightforward. 
+
+
+We learned how to access data off of an SD card using our board. We were able to use the SPI functions from the LCD to read and write from the SD. We also learned a little bit about DMA and how it is important for freeing up the processor. We also learned about FAT and how data is stored using it.  

@@ -1,0 +1,8 @@
+Blake Corley bacorley Jennie Lipson jenlipso
+
+We created functions that allowed us to flash LED lights.
+
+There were no difficulties. The only part we had trouble with is how to get the light init at the same time.
+
+
+We learned how the board works a little bit.....

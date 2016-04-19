@@ -1,0 +1,26 @@
+
+Blake Corley bacorley             no partner
+
+	In lab this week we learned about various debugging techniques that can be used when working with the board. 
+We used printf to check the led state. Next, we used Saleae to analyze a pin and got data from it. 
+Finally, we used GDB to debug a little bit of code at the end.
+
+	
+	We used Salea to measure the frequency outputted by GPIO pin for led 1. We ran the logic analyzer with and without
+the print statement. The print statement slowed it down a lot giving a period reading of 25ms. When the print 
+statement was removed it went a lot faster with a period reading of about 3.89 ms.
+
+	
+	I had some trouble, in part two, trying to figure out what needed to be changed. I wasn't sure where to look 
+within the stm32f30x_gpio.c file. After playing around with variable I found what the problem was, which In hindsight 
+was pretty obvious. I also had trouble in part 3.1. Not because it was difficult, but because a green light appeared 
+on the north side of my board which caused it not to work. Still not sure why though....
+
+	I feel the most comfortable with printf. Probably because that's what I'm most experienced with. I'm probably 
+equally uncomfortable with GDB and Saleae. I think Saleae is a really interesting way to debug, but I don't fully know
+how it works. I've tried doing to GDB tutorial from lab2 multiple times but I've never been able to get it to work. 
+Other GDB tutorials aren't much help.
+
+	I learned about various ways to debug. My favourite part was learning about Saleae. I find it really 
+interesting how you can take reading out the code as it is running based off of just a few pins.
+

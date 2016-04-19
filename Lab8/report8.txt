@@ -1,0 +1,17 @@
+
+
+Difficulties: This lab wasn’t too difficult. Getting some of the initialization function properly configure was a little tricky. We were reinitializing some SPI functions which was giving us some errors. Question 1-3 were hard. Mainly because the recourses given didn’t really help answer the questions. So we had to look them up online.
+
+
+Learned: We learn how to set up an LCD display on the board. We learned a little bit about how to draw graphics on the lcd. We also learned a little bit more about some of the SPI functions.
+
+
+Q1. The deassert clears screen so that the data doesn't remain on the screen. It then asserts to turn everything on again. Similar to the idea of turning it off and back on again. It's important so that it there's nothing that you don't want there.
+
+Q2. It's the one byte transfer between the master and slave. The master sends a bit on the MOSI line, and the slave reads it from that same line. The slave sends a bit on the MISO line, and the master reads it from that same line
+
+Q3. In this process of the FRMCTR3 line it calls the write funtion as control with some initializer, cmd=0xB3. If the struct contains data(which in this case it does.) it calls the write function again as data with the given data, { 0x01, 0x2C, 0x2D, 0x01, 0x2C, 0x2D }, with length of data = 6. Then it delays for a certain amount of ms, which in this case is = 0.
+
+Q4. It uses an embeded for loop to set draw pixels with a width and height, 5 and 8 respectivly. If it wasn't there then it wouldn't draw a  background.
+
+Q5. The ASCII array contains hex values that are converted to bytes. Then bit by bit pixels are written if the bit=1 to the screen vertically and moving horizontally.  

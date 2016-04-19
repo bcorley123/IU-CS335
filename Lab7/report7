@@ -1,0 +1,11 @@
+Blake Corley bacorley    Ian Hicks ianhicks
+
+
+1. In this lab, we wrote a driver that allowed us to communicate with the STM32 using SPI. We also wrote an application that allowed us to measure the angular velocity of our board using the gyroscope, and print out an axis reading using the keyboard and user button. We ultimately were able to get everything working. Nothing didn't work.
+
+2. Everything up until 5.4 was pretty straightforward, just following instructions and looking up functions in the dictionaries. At 5.4 we had a little trouble at this line : *pBuffer = f3d_gyro_sendbyte(*pBuffer);
+We were giving sendbyte WriteAddr instead of *pBuffer. From there it was pretty easy until part 8. Most of it wasn't hard but it took us a little while to figure out that we had to use USART_ReceiveData(USART1); to grab the keyboard value and reset it after the loop ended.
+
+3. In this lab I learn how to about how SPI communication works. The master and slave essentially are always swapping data via the Serial Clock. And that the CS has to be set to low in order to start transfering data. 
+
+ 

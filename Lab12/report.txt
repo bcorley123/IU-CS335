@@ -1,0 +1,18 @@
+The difficulties we had with this lab was about the same as every lab before this. That being getting the right info in the make file, making sure we had the proper include files, and tracking down inconsistencies between the header files and the source files. This lab was pretty easy though. The most annoying part was download 30+ wav file only to have 5 of them work.
+
+
+We built upon our previous knowledge of how DMA works. It's much faster than using polling when working with bulky data. We also learned a little bit how the DAC takes bytes of data sampled from a wav file and approximates a certain voltage to be emitted from the speaker. In the end, we basically created an extremely bulky MP3 player ( which is actually just a bulky WAV player, but you get the point).
+
+
+
+Q1. In this instance, there are two different SPI devices that exist. So, when this line is runs it sets the base address to the data register of that particular SPI device. 
+
+
+Q2. This block of code is in an if else statement. So, if there is a tbuf, meaning there is something to be transmitted, the memory base address is set to what tbuf is. Since something is going to be done with the data it will need to increment done the address to get to new data. If there is nothing in tbuf, base address still gets set, but the memory does not increment, so as to not 'skip' data.
+
+
+Q3. This code is necessary because it makes sure that the program doesn't move on until after the transfer is completed for tbuf or rbuf  and memory is incremented (assuming the tbuf or rbuf exists). 
+
+Q4. In spiReadWrite there is an if else statement, if the byte is less than 4 it will not execute xchng_datablock. This is good because it will ultimately be more efficient to transfer data serially. We use xchng_datablock for large bytes which is only efficient with larger bytes.
+
+Q5. They work on different portions because the DMA sends half of the buffer to the audio player and then that half is rewritten with new data, unlike most of our works with buffers where the entire buffer is rewritten at once. This allows for a continuous feed of data into the buffer and output to sound.
